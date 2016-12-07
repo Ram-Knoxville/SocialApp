@@ -18,6 +18,10 @@
 		3250F11B1DF8A968002C5288 /* logo_torrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1191DF8A968002C5288 /* logo_torrey.png */; };
 		3250F1211DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250F11D1DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.m */; };
 		3250F1221DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250F11E1DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		3250F1241DF8C0CE002C5288 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1231DF8C0CE002C5288 /* TopView.swift */; };
+		3250F1271DF8C191002C5288 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1261DF8C191002C5288 /* constants.swift */; };
+		3250F1291DF8C4D0002C5288 /* facebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1281DF8C4D0002C5288 /* facebookButton.swift */; };
+		3250F12B1DF8C8AF002C5288 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */; };
 		EFEC0B2174CCF1B3CE536C52 /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AD71F715D955D84FD07BC8 /* Pods_SocialApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		3250F11E1DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3250F11F1DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		3250F1201DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		3250F1231DF8C0CE002C5288 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		3250F1261DF8C191002C5288 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		3250F1281DF8C4D0002C5288 /* facebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = facebookButton.swift; sourceTree = "<group>"; };
+		3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		57218A8EA71E462AC5BB6C49 /* Pods-SocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialApp/Pods-SocialApp.release.xcconfig"; sourceTree = "<group>"; };
 		F52AFE505685EB8102A3EE9A /* Pods-SocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialApp/Pods-SocialApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,9 +84,12 @@
 		3250F0FE1DF87565002C5288 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				3250F1251DF8C16E002C5288 /* Utilities */,
 				3250F1131DF87A6A002C5288 /* Model */,
 				3250F1151DF87A75002C5288 /* Controller */,
 				3250F1141DF87A6F002C5288 /* View */,
+				3250F1181DF8A968002C5288 /* Facebook.png */,
+				3250F1191DF8A968002C5288 /* logo_torrey.png */,
 				3250F1161DF891D9002C5288 /* images */,
 				3250F0FF1DF87565002C5288 /* AppDelegate.swift */,
 				3250F1031DF87565002C5288 /* Main.storyboard */,
@@ -104,9 +115,10 @@
 				3250F11E1DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				3250F11F1DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.h */,
 				3250F1201DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				3250F1181DF8A968002C5288 /* Facebook.png */,
-				3250F1191DF8A968002C5288 /* logo_torrey.png */,
 				3250F11C1DF8AA44002C5288 /* SocialApp-Bridging-Header.h */,
+				3250F1231DF8C0CE002C5288 /* TopView.swift */,
+				3250F1281DF8C4D0002C5288 /* facebookButton.swift */,
+				3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,6 +129,14 @@
 				3250F1011DF87565002C5288 /* SignInVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3250F1251DF8C16E002C5288 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3250F1261DF8C191002C5288 /* constants.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		5C3ACD4CEE8BE30335F9D633 /* Pods */ = {
@@ -266,9 +286,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3250F1211DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				3250F1241DF8C0CE002C5288 /* TopView.swift in Sources */,
 				3250F1221DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3250F1021DF87565002C5288 /* SignInVC.swift in Sources */,
+				3250F1291DF8C4D0002C5288 /* facebookButton.swift in Sources */,
+				3250F12B1DF8C8AF002C5288 /* LoginTextFields.swift in Sources */,
 				3250F1001DF87565002C5288 /* AppDelegate.swift in Sources */,
+				3250F1271DF8C191002C5288 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
