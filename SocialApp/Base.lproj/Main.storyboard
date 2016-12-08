@@ -85,13 +85,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="227" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDZ-ZI-pNl" customClass="LoginTextFields" customModule="SocialApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="38" width="227" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDx-ZM-uyO" customClass="facebookButton" customModule="SocialApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="76" width="227" height="30"/>
@@ -99,6 +99,9 @@
                                                 <state key="normal" title="Sign in by Email">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="emailSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yR4-KO-vKd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -136,6 +139,10 @@
                             <constraint firstItem="mBx-S2-Hwf" firstAttribute="top" secondItem="qT1-Zo-4Lp" secondAttribute="bottom" constant="1" id="rGK-at-4QL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="ioI-3c-zaw" id="ZXG-qt-1VL"/>
+                        <outlet property="pwdField" destination="IDZ-ZI-pNl" id="6jV-am-h3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
