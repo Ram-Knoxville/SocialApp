@@ -240,15 +240,15 @@
                                     <constraint firstItem="bVx-DY-aoU" firstAttribute="leading" secondItem="BGI-Y3-WnE" secondAttribute="leading" constant="8" id="gLt-iD-gOL"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="305" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gWa-OY-e8L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="305" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gWa-OY-e8L">
                                 <rect key="frame" x="0.0" y="163" width="320" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="305" id="U8c-oi-nM0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="305" id="U8c-oi-nM0" customClass="PostCell" customModule="SocialApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="305"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U8c-oi-nM0" id="FyP-tg-bNS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="304"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-Y5-Zap" customClass="TopView" customModule="SocialApp" customModuleProvider="target">
@@ -339,6 +339,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="RvT-Y5-Zap" secondAttribute="trailing" constant="16" id="tUO-gh-854"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="WGI-Nc-2CV" id="E4e-EN-MRj"/>
+                                            <outlet property="likesLbl" destination="utm-ON-eIp" id="JIF-3M-qd8"/>
+                                            <outlet property="postImg" destination="ARH-Tx-PGa" id="FDs-T0-UL4"/>
+                                            <outlet property="profileImage" destination="a7k-kK-PLs" id="OEF-Ms-hFn"/>
+                                            <outlet property="usernamelbl" destination="ffu-ZJ-6w6" id="Pbt-AW-dtp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -358,6 +365,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="gWa-OY-e8L" id="fdz-Lf-cqa"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToLogin" id="3cl-rz-3VZ"/>
                     </connections>
                 </viewController>
