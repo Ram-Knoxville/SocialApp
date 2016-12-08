@@ -19,11 +19,13 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let _ = KeychainWrapper.stringForKey(KEY_UID){
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.defaultKeychainWrapper().stringForKey(KEY_UID){
+            print("KeychainWrapper user found in keychain")
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
-        
     }
 
     @IBAction func facebookbtnTapped(_ sender: Any) {
@@ -85,7 +87,7 @@ class SignInVC: UIViewController {
     }
     
     func completeSignIn(id: String) {
-        let KeyChainResult = KeychainWrapper.setString(id, forKey: KEY_UID)
+        let KeyChainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print ("Data saved to Keychain \(KeyChainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }

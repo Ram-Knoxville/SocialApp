@@ -78,7 +78,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="atj-5B-HQ1">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="atj-5B-HQ1">
                                         <rect key="frame" x="47" y="148" width="227" height="106"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-3c-zaw" customClass="LoginTextFields" customModule="SocialApp" customModuleProvider="target">
@@ -110,7 +110,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="atj-5B-HQ1" firstAttribute="top" secondItem="qt3-8A-CEf" secondAttribute="bottom" constant="19" id="2zW-fR-PS8"/>
+                                    <constraint firstItem="atj-5B-HQ1" firstAttribute="top" secondItem="qt3-8A-CEf" secondAttribute="bottom" constant="23" id="2zW-fR-PS8"/>
                                     <constraint firstItem="atj-5B-HQ1" firstAttribute="centerX" secondItem="k8z-JV-Gb2" secondAttribute="centerX" id="B1U-tr-vKq"/>
                                     <constraint firstItem="k8z-JV-Gb2" firstAttribute="centerX" secondItem="qT1-Zo-4Lp" secondAttribute="centerX" id="LP4-Ve-79m"/>
                                     <constraint firstItem="qt3-8A-CEf" firstAttribute="top" secondItem="k8z-JV-Gb2" secondAttribute="bottom" constant="16" id="P5W-aH-tAD"/>
@@ -160,12 +160,28 @@
                     <view key="view" contentMode="scaleToFill" id="IT1-Iw-CBF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efk-Xw-elq">
+                                <rect key="frame" x="106" y="269" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                <state key="normal" title="Sing Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutBtn:" destination="y1t-dr-XxZ" eventType="touchUpInside" id="6fe-5Q-zNO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.15345397699999999" green="0.29146675449999998" blue="0.44332963199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToLogin" id="3cl-rz-3VZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H28-nO-dPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="36"/>
+            <point key="canvasLocation" x="937.5" y="35.91549295774648"/>
         </scene>
     </scenes>
     <resources>
