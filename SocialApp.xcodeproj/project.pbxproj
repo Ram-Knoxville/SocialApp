@@ -13,7 +13,6 @@
 		3250F1071DF87565002C5288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1061DF87565002C5288 /* Assets.xcassets */; };
 		3250F10A1DF87565002C5288 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1081DF87565002C5288 /* LaunchScreen.storyboard */; };
 		3250F1121DF8765B002C5288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1111DF8765B002C5288 /* GoogleService-Info.plist */; };
-		3250F1171DF891D9002C5288 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1161DF891D9002C5288 /* images */; };
 		3250F11A1DF8A968002C5288 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1181DF8A968002C5288 /* Facebook.png */; };
 		3250F11B1DF8A968002C5288 /* logo_torrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 3250F1191DF8A968002C5288 /* logo_torrey.png */; };
 		3250F1211DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250F11D1DF8AA44002C5288 /* TPKeyboardAvoidingScrollView.m */; };
@@ -23,6 +22,7 @@
 		3250F1291DF8C4D0002C5288 /* facebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1281DF8C4D0002C5288 /* facebookButton.swift */; };
 		3250F12B1DF8C8AF002C5288 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */; };
 		3250F1311DF9C820002C5288 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1301DF9C820002C5288 /* FeedVC.swift */; };
+		3250F1331DFA0E13002C5288 /* smoothImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250F1321DFA0E13002C5288 /* smoothImages.swift */; };
 		EFEC0B2174CCF1B3CE536C52 /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AD71F715D955D84FD07BC8 /* Pods_SocialApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,6 @@
 		3250F1091DF87565002C5288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3250F10B1DF87565002C5288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3250F1111DF8765B002C5288 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3250F1161DF891D9002C5288 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		3250F1181DF8A968002C5288 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
 		3250F1191DF8A968002C5288 /* logo_torrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_torrey.png; sourceTree = "<group>"; };
 		3250F11C1DF8AA44002C5288 /* SocialApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialApp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		3250F1281DF8C4D0002C5288 /* facebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = facebookButton.swift; sourceTree = "<group>"; };
 		3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		3250F1301DF9C820002C5288 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		3250F1321DFA0E13002C5288 /* smoothImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smoothImages.swift; sourceTree = "<group>"; };
 		57218A8EA71E462AC5BB6C49 /* Pods-SocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialApp/Pods-SocialApp.release.xcconfig"; sourceTree = "<group>"; };
 		F52AFE505685EB8102A3EE9A /* Pods-SocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialApp/Pods-SocialApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,6 @@
 				3250F1141DF87A6F002C5288 /* View */,
 				3250F1181DF8A968002C5288 /* Facebook.png */,
 				3250F1191DF8A968002C5288 /* logo_torrey.png */,
-				3250F1161DF891D9002C5288 /* images */,
 				3250F0FF1DF87565002C5288 /* AppDelegate.swift */,
 				3250F1031DF87565002C5288 /* Main.storyboard */,
 				3250F1061DF87565002C5288 /* Assets.xcassets */,
@@ -121,6 +120,7 @@
 				3250F1231DF8C0CE002C5288 /* TopView.swift */,
 				3250F1281DF8C4D0002C5288 /* facebookButton.swift */,
 				3250F12A1DF8C8AF002C5288 /* LoginTextFields.swift */,
+				3250F1321DFA0E13002C5288 /* smoothImages.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -223,7 +223,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3250F1171DF891D9002C5288 /* images in Resources */,
 				3250F10A1DF87565002C5288 /* LaunchScreen.storyboard in Resources */,
 				3250F1121DF8765B002C5288 /* GoogleService-Info.plist in Resources */,
 				3250F11A1DF8A968002C5288 /* Facebook.png in Resources */,
@@ -293,6 +292,7 @@
 				3250F1241DF8C0CE002C5288 /* TopView.swift in Sources */,
 				3250F1221DF8AA44002C5288 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3250F1021DF87565002C5288 /* SignInVC.swift in Sources */,
+				3250F1331DFA0E13002C5288 /* smoothImages.swift in Sources */,
 				3250F1291DF8C4D0002C5288 /* facebookButton.swift in Sources */,
 				3250F12B1DF8C8AF002C5288 /* LoginTextFields.swift in Sources */,
 				3250F1001DF87565002C5288 /* AppDelegate.swift in Sources */,

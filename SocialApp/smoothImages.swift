@@ -1,14 +1,14 @@
 //
-//  TopView.swift
+//  smoothImages.swift
 //  SocialApp
 //
-//  Created by RAMIRO AGUIRRE MELENDEZ on 12/7/16.
+//  Created by RAMIRO AGUIRRE MELENDEZ on 12/8/16.
 //  Copyright © 2016 FABATSA. All rights reserved.
 //
 
 import UIKit
 
-class TopView: UIView {
+class smoothImages: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +17,6 @@ class TopView: UIView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset =  CGSize(width: 1.0, height: 1.0)
-        layer.cornerRadius = 2.0
+        layer.cornerRadius = 3.0
     }
-
 }
