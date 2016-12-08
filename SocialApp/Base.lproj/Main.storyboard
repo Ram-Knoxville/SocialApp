@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,11 +20,130 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rze-oj-Iz6" customClass="TopView" customModule="SocialApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_torrey.png" translatesAutoresizingMaskIntoConstraints="NO" id="6mW-7q-dal">
+                                        <rect key="frame" x="8" y="11" width="304" height="128"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15345397696688501" green="0.29146675454075782" blue="0.44332963197969544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6mW-7q-dal" firstAttribute="top" secondItem="rze-oj-Iz6" secondAttribute="top" constant="11" id="Etb-ct-e4l"/>
+                                    <constraint firstItem="6mW-7q-dal" firstAttribute="leading" secondItem="rze-oj-Iz6" secondAttribute="leading" constant="8" id="RUr-P0-5eR"/>
+                                    <constraint firstAttribute="bottom" secondItem="6mW-7q-dal" secondAttribute="bottom" constant="11" id="Wjf-HH-FTN"/>
+                                    <constraint firstAttribute="height" constant="150" id="Zez-yq-LCf"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mW-7q-dal" secondAttribute="trailing" constant="8" id="aRR-xK-Tn0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBx-S2-Hwf">
+                                <rect key="frame" x="0.0" y="493" width="320" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si nunca te has loggeado se creará una cuenta generica para ti." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7px-hJ-AUO">
+                                        <rect key="frame" x="8" y="8" width="304" height="59"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.049182076310000003" green="0.21268409020000001" blue="0.30419666229999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7px-hJ-AUO" secondAttribute="trailing" constant="8" id="BcO-QP-Ku0"/>
+                                    <constraint firstItem="7px-hJ-AUO" firstAttribute="leading" secondItem="mBx-S2-Hwf" secondAttribute="leading" constant="8" id="EmJ-Vs-YWF"/>
+                                    <constraint firstAttribute="bottom" secondItem="7px-hJ-AUO" secondAttribute="bottom" constant="8" id="Qxj-8y-DPU"/>
+                                    <constraint firstItem="7px-hJ-AUO" firstAttribute="top" secondItem="mBx-S2-Hwf" secondAttribute="top" constant="8" id="pm3-Ru-zMb"/>
+                                    <constraint firstAttribute="height" constant="75" id="y4C-Hm-TfT"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qT1-Zo-4Lp" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="149" width="320" height="343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8z-JV-Gb2" customClass="facebookButton" customModule="SocialApp" customModuleProvider="target">
+                                        <rect key="frame" x="47" y="34" width="227" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="MeA-h0-LLH"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Facebook.png"/>
+                                        <connections>
+                                            <action selector="facebookbtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gog-bY-YMY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt3-8A-CEf">
+                                        <rect key="frame" x="115" y="101" width="91" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="HsT-FT-7DA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="atj-5B-HQ1">
+                                        <rect key="frame" x="47" y="148" width="227" height="106"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-3c-zaw" customClass="LoginTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDZ-ZI-pNl" customClass="LoginTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="38" width="227" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDx-ZM-uyO" customClass="facebookButton" customModule="SocialApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="76" width="227" height="30"/>
+                                                <color key="backgroundColor" red="0.14260740144803907" green="0.45806360010121333" blue="0.58060358502538079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Sign in by Email">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="227" id="7QX-8k-hqR"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="atj-5B-HQ1" firstAttribute="top" secondItem="qt3-8A-CEf" secondAttribute="bottom" constant="19" id="2zW-fR-PS8"/>
+                                    <constraint firstItem="atj-5B-HQ1" firstAttribute="centerX" secondItem="k8z-JV-Gb2" secondAttribute="centerX" id="B1U-tr-vKq"/>
+                                    <constraint firstItem="k8z-JV-Gb2" firstAttribute="centerX" secondItem="qT1-Zo-4Lp" secondAttribute="centerX" id="LP4-Ve-79m"/>
+                                    <constraint firstItem="qt3-8A-CEf" firstAttribute="top" secondItem="k8z-JV-Gb2" secondAttribute="bottom" constant="16" id="P5W-aH-tAD"/>
+                                    <constraint firstItem="k8z-JV-Gb2" firstAttribute="leading" secondItem="qT1-Zo-4Lp" secondAttribute="leading" constant="47" id="Y7g-NS-HOW"/>
+                                    <constraint firstAttribute="trailing" secondItem="k8z-JV-Gb2" secondAttribute="trailing" constant="46" id="dqn-wo-5rL"/>
+                                    <constraint firstItem="qt3-8A-CEf" firstAttribute="leading" secondItem="qT1-Zo-4Lp" secondAttribute="leading" constant="115" id="fyz-XD-VmC"/>
+                                    <constraint firstItem="k8z-JV-Gb2" firstAttribute="centerX" secondItem="atj-5B-HQ1" secondAttribute="centerX" id="l1f-1O-rPV"/>
+                                    <constraint firstAttribute="trailing" secondItem="qt3-8A-CEf" secondAttribute="trailing" constant="114" id="lkG-RX-KPP"/>
+                                    <constraint firstItem="qt3-8A-CEf" firstAttribute="centerX" secondItem="k8z-JV-Gb2" secondAttribute="centerX" id="n2S-hk-LVJ"/>
+                                    <constraint firstItem="k8z-JV-Gb2" firstAttribute="top" secondItem="qT1-Zo-4Lp" secondAttribute="top" constant="34" id="uuB-h7-4y1"/>
+                                    <constraint firstAttribute="bottom" secondItem="k8z-JV-Gb2" secondAttribute="bottom" constant="258" id="y2m-hX-7Gp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mBx-S2-Hwf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Km-Nc-tCS"/>
+                            <constraint firstItem="rze-oj-Iz6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hpk-Cx-4e7"/>
+                            <constraint firstAttribute="trailing" secondItem="mBx-S2-Hwf" secondAttribute="trailing" id="I3d-7H-Ehw"/>
+                            <constraint firstItem="qT1-Zo-4Lp" firstAttribute="trailing" secondItem="mBx-S2-Hwf" secondAttribute="trailing" id="IKb-n9-ZUB"/>
+                            <constraint firstItem="qT1-Zo-4Lp" firstAttribute="leading" secondItem="mBx-S2-Hwf" secondAttribute="leading" id="YTX-8l-id1"/>
+                            <constraint firstItem="rze-oj-Iz6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZG1-eb-RxJ"/>
+                            <constraint firstAttribute="trailing" secondItem="rze-oj-Iz6" secondAttribute="trailing" id="d60-Ip-uoC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mBx-S2-Hwf" secondAttribute="bottom" id="dHO-e1-5b3"/>
+                            <constraint firstItem="qT1-Zo-4Lp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="129" id="fGY-qR-dvw"/>
+                            <constraint firstItem="mBx-S2-Hwf" firstAttribute="top" secondItem="qT1-Zo-4Lp" secondAttribute="bottom" constant="1" id="rGK-at-4QL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.75" y="35.91549295774648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Facebook.png" width="564" height="119"/>
+        <image name="logo_torrey.png" width="800" height="248"/>
+    </resources>
 </document>
