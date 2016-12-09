@@ -21,14 +21,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
     }
 
-    @IBAction func signOutBtn(_ sender: Any) {
+    @IBAction func signOut(_ sender: Any) {
         let KeyChainResult = KeychainWrapper.defaultKeychainWrapper().removeObjectForKey(KEY_UID)
         print ("ID removed from keychain \(KeyChainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToLogin", sender: nil)
-  
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

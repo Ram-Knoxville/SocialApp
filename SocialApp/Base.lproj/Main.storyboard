@@ -167,12 +167,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUx-sU-B63" customClass="TopView" customModule="SocialApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-hw-3gn">
-                                        <rect key="frame" x="8" y="26" width="34" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="34" id="WS4-DR-kLq"/>
-                                        </constraints>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menubutton" translatesAutoresizingMaskIntoConstraints="NO" id="AaA-sJ-Fr7">
                                         <rect key="frame" x="275" y="26" width="37" height="31"/>
                                         <constraints>
@@ -180,25 +174,37 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5W-A3-75j">
-                                        <rect key="frame" x="136" y="31" width="48" height="21"/>
+                                        <rect key="frame" x="144.5" y="31" width="39.5" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avf-KG-zcJ" customClass="facebookButton" customModule="SocialApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="23" width="41" height="34"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="tiT-aB-tEK"/>
+                                        </constraints>
+                                        <state key="normal" image="sign-out"/>
+                                        <connections>
+                                            <action selector="signOut:" destination="y1t-dr-XxZ" eventType="touchUpInside" id="ftT-eZ-qy9"/>
+                                            <outletCollection property="gestureRecognizers" destination="6u7-WN-28j" appends="YES" id="imh-k4-rp5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15345397699999999" green="0.29146675449999998" blue="0.44332963199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="AaA-sJ-Fr7" firstAttribute="leading" secondItem="b5W-A3-75j" secondAttribute="trailing" constant="91" id="8LU-Mr-keK"/>
-                                    <constraint firstItem="b5W-A3-75j" firstAttribute="leading" secondItem="ck9-hw-3gn" secondAttribute="trailing" constant="94" id="EJ4-pD-bWd"/>
+                                    <constraint firstItem="avf-KG-zcJ" firstAttribute="leading" secondItem="IUx-sU-B63" secondAttribute="leading" constant="8" id="9fU-h0-GDV"/>
+                                    <constraint firstItem="avf-KG-zcJ" firstAttribute="top" secondItem="IUx-sU-B63" secondAttribute="top" constant="23" id="MdE-co-wYA"/>
+                                    <constraint firstItem="b5W-A3-75j" firstAttribute="leading" secondItem="avf-KG-zcJ" secondAttribute="trailing" constant="95.5" id="MvP-4o-DVg"/>
                                     <constraint firstItem="AaA-sJ-Fr7" firstAttribute="top" secondItem="IUx-sU-B63" secondAttribute="top" constant="26" id="NEV-ZT-PR1"/>
-                                    <constraint firstItem="ck9-hw-3gn" firstAttribute="leading" secondItem="IUx-sU-B63" secondAttribute="leading" constant="8" id="ZPN-eP-NhB"/>
+                                    <constraint firstAttribute="bottom" secondItem="avf-KG-zcJ" secondAttribute="bottom" constant="8" id="OM6-Qw-BR3"/>
                                     <constraint firstAttribute="bottom" secondItem="AaA-sJ-Fr7" secondAttribute="bottom" constant="8" id="feG-oM-K8U"/>
                                     <constraint firstAttribute="height" constant="65" id="itN-5f-fTb"/>
                                     <constraint firstItem="b5W-A3-75j" firstAttribute="top" secondItem="IUx-sU-B63" secondAttribute="top" constant="31" id="laZ-3H-HAf"/>
-                                    <constraint firstAttribute="bottom" secondItem="ck9-hw-3gn" secondAttribute="bottom" constant="8" id="mte-XH-w0Y"/>
                                     <constraint firstAttribute="bottom" secondItem="b5W-A3-75j" secondAttribute="bottom" constant="13" id="r2U-xn-8qu"/>
                                     <constraint firstAttribute="trailing" secondItem="AaA-sJ-Fr7" secondAttribute="trailing" constant="8" id="rfp-PJ-i54"/>
-                                    <constraint firstItem="ck9-hw-3gn" firstAttribute="top" secondItem="IUx-sU-B63" secondAttribute="top" constant="26" id="wu3-MF-UnT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGI-Y3-WnE" customClass="TopView" customModule="SocialApp" customModuleProvider="target">
@@ -372,6 +378,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H28-nO-dPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6u7-WN-28j"/>
             </objects>
             <point key="canvasLocation" x="821.25" y="35.91549295774648"/>
         </scene>
@@ -381,10 +388,10 @@
         <image name="add-image" width="88" height="88"/>
         <image name="addsnaptostory" width="26" height="26"/>
         <image name="empty-heart" width="70" height="70"/>
-        <image name="home_icon" width="15" height="13"/>
         <image name="logo_torrey.png" width="800" height="248"/>
         <image name="menubutton" width="20" height="18"/>
         <image name="placeholder" width="567" height="312"/>
         <image name="requests_icon" width="20" height="20"/>
+        <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
