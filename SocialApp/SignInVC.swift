@@ -51,7 +51,7 @@ class SignInVC: UIViewController {
                 print("Succesfully Authenticated with Firebase")
                 if let user = user {
                     let userData = ["provider": credential.provider]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                    self.completeSignIn(user.uid, userData: userData)
                 }
             }
         })
@@ -64,7 +64,7 @@ class SignInVC: UIViewController {
                     print("Email user authenticated with Firebase")
                     if let user = user {
                         let userData = ["provider": user.providerID]
-                        self.completeSignIn(id: user.uid, userData: userData)
+                        self.completeSignIn(user.uid, userData: userData)
                     }
                 }else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
@@ -74,7 +74,7 @@ class SignInVC: UIViewController {
                             print("Succesfully authenticated with Firebase by Email")
                             if let user = user {
                                 let userData = ["provider": user.providerID]
-                                self.completeSignIn(id: user.uid, userData: userData)
+                                self.completeSignIn(user.uid, userData: userData)
                             }
                         }
                     })
@@ -83,8 +83,8 @@ class SignInVC: UIViewController {
         }
     }
     
-    func completeSignIn(id: String, userData: Dictionary<String, String>) {
-        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+    func completeSignIn(_ id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(id, userData: userData)
         let KeyChainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print ("Data saved to Keychain \(KeyChainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)

@@ -1523,10 +1523,19 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					2C77C5E2735820D6CF5D5EA550A3D93A = {
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 					};
 					306BBD18FB56407A36F68B01A3B625C9 = {
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
+					};
+					3C5685456B3ED2A700DBD8CC7DE83D96 = {
+						LastSwiftMigration = 0820;
+					};
+					6EDC37F3FA92533C6AC3562458AA91F1 = {
+						LastSwiftMigration = 0820;
+					};
+					9D0F2E5EA1B46A5D72FFD42B0B39DBBC = {
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -1803,6 +1812,7 @@
 				PRODUCT_NAME = FBSDKLoginKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1863,6 +1873,7 @@
 				PRODUCT_NAME = FBSDKCoreKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1892,6 +1903,7 @@
 				PRODUCT_NAME = FBSDKLoginKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1990,6 +2002,7 @@
 				PRODUCT_NAME = Bolts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2019,6 +2032,7 @@
 				PRODUCT_NAME = Bolts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2086,6 +2100,7 @@
 				PRODUCT_NAME = FBSDKCoreKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

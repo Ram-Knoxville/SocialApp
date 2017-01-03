@@ -9,10 +9,10 @@
 import Foundation
 
 class Post {
-    private var _caption: String!
-    private var _imageUrl: String!
-    private var _likes: Int!
-    private var _postKey: String!
+    fileprivate var _caption: String!
+    fileprivate var _imageUrl: String!
+    fileprivate var _likes: Int!
+    fileprivate var _postKey: String!
     
     var caption: String {
         return _caption
