@@ -187,8 +187,7 @@
                                         </constraints>
                                         <state key="normal" image="sign-out"/>
                                         <connections>
-                                            <action selector="signOut:" destination="y1t-dr-XxZ" eventType="touchUpInside" id="ftT-eZ-qy9"/>
-                                            <outletCollection property="gestureRecognizers" destination="6u7-WN-28j" appends="YES" id="imh-k4-rp5"/>
+                                            <outletCollection property="gestureRecognizers" destination="riU-OO-POh" appends="YES" id="2Vt-s1-ZHY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -383,10 +382,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H28-nO-dPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6u7-WN-28j"/>
                 <tapGestureRecognizer id="L2L-ci-ffI">
                     <connections>
                         <action selector="addImageTapped:" destination="y1t-dr-XxZ" id="tp7-2b-neT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="riU-OO-POh">
+                    <connections>
+                        <action selector="signOutPressed:" destination="y1t-dr-XxZ" id="ZEc-oA-iYV"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
