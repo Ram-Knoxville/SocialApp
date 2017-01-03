@@ -213,12 +213,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-DY-aoU">
                                         <rect key="frame" x="8" y="8" width="272" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="zU1-lB-lpk" customClass="smoothImages" customModule="SocialApp" customModuleProvider="target">
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="zU1-lB-lpk" customClass="smoothImages" customModule="SocialApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="49"/>
                                                 <color key="backgroundColor" red="0.1426074014" green="0.45806360010000002" blue="0.58060358499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="xDU-2S-Nk0"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="L2L-ci-ffI" appends="YES" id="syi-1q-SBv"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe aqui ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c46-Eo-EKf" customClass="LoginTextFields" customModule="SocialApp" customModuleProvider="target">
                                                 <rect key="frame" x="50" y="0.0" width="177" height="49"/>
@@ -373,12 +377,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="zU1-lB-lpk" id="dmJ-TW-VbI"/>
                         <outlet property="tableView" destination="gWa-OY-e8L" id="fdz-Lf-cqa"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToLogin" id="3cl-rz-3VZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H28-nO-dPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6u7-WN-28j"/>
+                <tapGestureRecognizer id="L2L-ci-ffI">
+                    <connections>
+                        <action selector="addImageTapped:" destination="y1t-dr-XxZ" id="tp7-2b-neT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="821.25" y="35.91549295774648"/>
         </scene>
