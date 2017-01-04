@@ -31,6 +31,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FeedVC.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             print(snapshot.value!)
             
@@ -46,6 +54,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
             self.tableView.reloadData()
         })
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     @IBAction func signOutPressed(_ sender: Any) {
@@ -69,16 +82,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString){
+            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, img: img)
-                return cell
-            }else{
+            } else {
                 cell.configureCell(post: post)
-                return cell
             }
-            
-            
-        }else{
+            return cell
+        } else {
             return PostCell()
         }
     }
@@ -97,30 +107,55 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, AnyObject> = [
+            "caption": captionField.text! as AnyObject,
+            "imageUrl": imgUrl as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "add-image")
+        
+        tableView.clearsContextBeforeDrawing = true
+        tableView.reloadData()
+        
+    }
+    
+    
     @IBAction func postBtnTapped(_ sender: Any) {
         guard let caption = captionField.text, caption != "" else {
-            print("RAM: Caption must be entered")
+            print("JESS: Caption must be entered")
             return
         }
         guard let img = imageAdd.image, imageSelected == true else {
-            print("Ram: An image must be selected ")
+            print("JESS: An image must be selected")
             return
         }
         
-        if let imgData = UIImageJPEGRepresentation(img, 0.2){
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
             let imgUid = NSUUID().uuidString
             let metadata = FIRStorageMetadata()
             metadata.contentType = "image/jpeg"
             
             DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
-                    print("RAM: Unable to upload to Firebase Storage")
-                }else{
-                    print("RAM: Post uploaded succesfully to Firebase Storage")
+                    print("JESS: Unable to upload image to Firebasee torage")
+                } else {
+                    print("JESS: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
                 }
             }
         }
+        
     }
     
 }

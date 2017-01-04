@@ -355,6 +355,7 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="caption" destination="WGI-Nc-2CV" id="E4e-EN-MRj"/>
+                                            <outlet property="likeImg" destination="Ghg-zP-rGg" id="MAV-U2-R5S"/>
                                             <outlet property="likesLbl" destination="utm-ON-eIp" id="JIF-3M-qd8"/>
                                             <outlet property="postImg" destination="ARH-Tx-PGa" id="FDs-T0-UL4"/>
                                             <outlet property="profileImage" destination="a7k-kK-PLs" id="OEF-Ms-hFn"/>
