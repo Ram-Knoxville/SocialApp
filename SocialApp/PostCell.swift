@@ -73,10 +73,13 @@ class PostCell: UITableViewCell {
                 self.likeImg.image = UIImage(named: "filled-heart")
                 self.post.adjustLikes(addLike: true)
                 self.likesRef.setValue(true)
+                //NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+                NotificationCenter.default.post(name: REFRESH_NOTIFICATION, object: nil)
             } else {
                 self.likeImg.image = UIImage(named: "empty-heart")
                 self.post.adjustLikes(addLike: false)
                 self.likesRef.removeValue()
+                NotificationCenter.default.post(name: REFRESH_NOTIFICATION, object: nil)
             }
         })
     }

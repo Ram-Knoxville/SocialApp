@@ -17,6 +17,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var captionField: LoginTextFields!
     
     var posts = [Post]()
+    var postsReversed = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
@@ -50,11 +51,24 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
                     }
+                    
                 }
+                
             }
+            self.postsReversed = self.posts.reversed()
             self.tableView.reloadData()
         })
+        
+        
+        NotificationCenter.default.addObserver(forName: REFRESH_NOTIFICATION, object: nil, queue: nil){notification in
+            self.posts.removeAll()
+            self.tableView.reloadData()
+        }
+        
+        
     }
+    
+    
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -78,20 +92,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
+        let post = postsReversed[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell {
             
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, img: img)
             } else {
                 cell.configureCell(post: post)
             }
+            
             return cell
         } else {
             return PostCell()
         }
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -121,7 +137,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imageSelected = false
         imageAdd.image = UIImage(named: "add-image")
         
-        tableView.clearsContextBeforeDrawing = true
+        posts….removeAll()
         tableView.reloadData()
         
     }
@@ -155,7 +171,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 }
             }
         }
-        
     }
+
+    
     
 }
